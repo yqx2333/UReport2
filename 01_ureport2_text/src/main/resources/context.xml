@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    ">
+
+    <!-- 创建context.xml文件, 引入UReport2报表xml文件 -->
+    <import resource="classpath:ureport-console-context.xml"></import>
+
+    <!-- 修改目录文件位置.
+            官方文档默认是在/WEB-INF/config.properties下面
+            我们将位置修改为绝对路径
+     -->
+    <bean id="propertyConfigurer" parent="ureport.props">
+        <property name="location">
+            <value>classpath:config.properties</value>
+        </property>
+    </bean>
+
+
+
+
+</beans>
