@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 找到mapper包下的指定mapper信息 -->
+<!--
+        column:    对应的是数据库中表字段的名称;
+        jdbcType:  对应数据库中表字段的类型;(全部大写)
+        property:  对应实体类中表字段的名称;
+
+        parameterType:  表示传递参数的类型;
+        resultType:     表示返回值类型;
+ -->
+<mapper namespace="com.yqx.ureport.mapper.UreportFileMapper">
+
+    <resultMap id="ureportFile" type="UreportFileEntity">
+
+        <id column="id_" jdbcType="BIGINT" property="id"></id>
+        <result column="name_" jdbcType="VARCHAR" property="name"></result>
+        <result column="context_" jdbcType="BLOB" property="content"></result>
+        <result column="create_time_" jdbcType="TIMESTAMP" property="createTime"></result>
+        <result column="update_time_" jdbcType="TIMESTAMP" property="updateTime"></result>
+
+    </resultMap>
+
+    <!-- 根据name名称查询个数 -->
+    <select id="checkExistByName" parameterType="java.lang.String" resultType="java.lang.Integer">
+        SELECT count(*) FROM ureport_file_tb1 WHERE name_ = #{name};
+    </select>
+
+    <!-- 查询所有报表信息 -->
+    <select id="queryReportFileList" resultMap="ureportFile">
+        select * from ureport_file_tb1;
+    </select>
+
+    <!-- 根据name查询报表信息 -->
+    <select id="queryUreportFileEntityByName" resultMap="ureportFile">
+        SELECT * FROM ureport_file_tb1 WHERE name_ = #{name};
+    </select>
+
+    <!-- 根据报表名称删除报表信息 -->
+    <delete id="deleteReportFileByName" parameterType="java.lang.String">
+        delete from ureport_file_tb1 where name_ = #{name};
+    </delete>
+
+    <!-- 添加一条报表信息 -->
+    <insert id="insertReportFile" parameterType="UreportFileEntity">
+        insert into
+            ureport_file_tb1(name_,content_,cteate_time_,update_time_)
+        values
+            (#{name},#{content},#{createTime},#{updateTime});
+    </insert>
+
+    <!-- 修改一条报表信息 -->
+    <update id="updateReoprtFile" parameterType="UreportFileEntity">
+        update ureport_file_tb1 set
+            name_ = #{name},
+            content_ = #{content},
+            cteate_time_ = #{createTime},
+            update_time_ = #{updateTime}
+        where
+            id_ = #{id};
+    </update>
+
+
+</mapper>

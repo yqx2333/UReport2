@@ -3,6 +3,8 @@ package com.yqx.ureport.mapper;
 import com.yqx.ureport.pojo.UreportFileEntity;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface UreportFileMapper extends tk.mybatis.mapper.common.Mapper<UreportFileMapper> {
 
@@ -21,6 +23,19 @@ public interface UreportFileMapper extends tk.mybatis.mapper.common.Mapper<Urepo
     UreportFileEntity queryUreportFileEntityByName( String name );
 
     /**
+     * 查询所有报表信息
+     * @return
+     */
+    List<UreportFileEntity> queryReportFileList();
+
+    /**
+     * 根据报表名称   进行删除报表对象
+     * @param name
+     * @return
+     */
+    int deleteReportFileByName( String name );
+
+    /**
      * 根据UreportFileEntity添加一个对象,增加功能
      * @param ureportFileEntity
      * @return
@@ -34,10 +49,6 @@ public interface UreportFileMapper extends tk.mybatis.mapper.common.Mapper<Urepo
      */
     int updateReoprtFile( UreportFileEntity ureportFileEntity );
 
-    /**
-     * 根据ID进行删除对象.
-     * @param id
-     */
-    void deleteReportFile( Integer id );
+
 
 }
