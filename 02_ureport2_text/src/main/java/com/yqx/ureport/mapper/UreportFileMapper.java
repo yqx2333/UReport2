@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 @Mapper
-public interface UreportFileMapper extends tk.mybatis.mapper.common.Mapper<UreportFileMapper> {
+public interface UreportFileMapper{
 
     /**
      * 根据name属性检查报表是否存在

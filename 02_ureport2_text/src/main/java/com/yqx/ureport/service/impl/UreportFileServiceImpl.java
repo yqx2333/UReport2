@@ -3,15 +3,14 @@ package com.yqx.ureport.service.impl;
 import com.yqx.ureport.mapper.UreportFileMapper;
 import com.yqx.ureport.pojo.UreportFileEntity;
 import com.yqx.ureport.service.UreportFileService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class UreportFileServiceImpl implements UreportFileService {
 
-    @Resource
+    @Autowired
     private UreportFileMapper ureportFileMapper;
 
 

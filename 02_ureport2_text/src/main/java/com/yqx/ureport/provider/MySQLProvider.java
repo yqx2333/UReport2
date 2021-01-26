@@ -1,3 +1,4 @@
+/*
 package com.yqx.ureport.provider;
 
 import com.yqx.ureport.service.UreportFileService;
@@ -11,9 +12,11 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
+*/
 /**
  * Sql提供者
- */
+ *//*
+
 @Setter
 @Component
 // prefix指向的路径就是 application.yaml文件中编写的内容 松散绑定
@@ -55,3 +58,4 @@ public class MySQLProvider {
     }
 
 }
+*/
