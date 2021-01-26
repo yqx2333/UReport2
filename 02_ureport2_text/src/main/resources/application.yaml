@@ -7,3 +7,17 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+
+# 简单配置一下 MyBatis
+# mybatis实体类包
+mybatis:
+  type-aliases-package: com.yqx.ureport.mapper
+  # mybatis Mapper(xml)文件位置
+  mapper-locations: classpath:mapper/*.xml
+
+# ureport MySql存储位置
+ureport:
+  mysql:
+   provider:
+    prefix: report-
+    disabled: false

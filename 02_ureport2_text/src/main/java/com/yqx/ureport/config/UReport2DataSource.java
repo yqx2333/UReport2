@@ -1,4 +1,4 @@
-package com.yqx.ureport.text;
+package com.yqx.ureport.config;
 
 import com.bstek.ureport.definition.datasource.BuildinDatasource;
 import org.slf4j.Logger;
