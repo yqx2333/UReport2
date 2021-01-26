@@ -1,4 +1,4 @@
-package com.yqx.ureport.text;
+package com.yqx.ureport.config;
 
 import com.bstek.ureport.console.UReportServlet;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -17,8 +17,8 @@ import javax.servlet.Servlet;
 // @ImportResource 用于将xml文件加载到Spring配置文件中
 @ImportResource( "classpath:ureport-console-context.xml" )
 @EnableAutoConfiguration
-@Configuration
-@ComponentScan( basePackages = "com.yqx.ureport.text")
+@Configuration  // 将类替代xml文件
+@ComponentScan( basePackages = "com.yqx.ureport.config")
 public class Ureport2Config {
 
     // 注入Bean,将UReport2加载到Servlet对象中
